@@ -1,0 +1,8 @@
+{
+    "AppSyncApiName": "koalakyle",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": ["authkoalakyle9856fe47", "Outputs.UserPoolId"]
+    }
+}

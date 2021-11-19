@@ -1,0 +1,33 @@
+type Point @model
+  @key(name: "byNote", fields: ["noteID", "createdAt"], queryField: "PointbyNote")
+  @key(name: "byCanvas", fields: ["canvasID", "createdAt"], queryField: "PointbyCanvas") {
+  x: Int!
+  y: Int!
+  noteID: ID
+  canvasID: ID
+  createdAt: AWSDateTime!
+}
+
+type Canvas
+  @model
+  @key(name: "byNote", fields: ["noteID", "createdAt"], queryField: "CanvasbyNote") {
+  id: ID!
+  drawMode: Boolean
+  paths: [Point!]! @connection(keyName: "byCanvas", fields: ["id"])
+  strokeColor: String
+  strokeWidth: Int
+  noteID: ID!
+  createdAt: AWSDateTime!
+}
+
+type Note @model {
+  id: ID!
+  content: String
+  position: [Point!]! @connection(keyName: "byNote", fields: ["id"])
+  background: String
+  color: String
+  color2: String
+  images: [String]
+  canvasPaths: [Canvas!]! @connection(keyName: "byNote", fields: ["id"])
+  createdAt: AWSDateTime!
+}

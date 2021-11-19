@@ -1,0 +1,220 @@
+.sticky-note-card {
+    position: absolute;
+    cursor: default;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 3px 5px -1px #aaaaaa;
+}
+
+.sticky-plus {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.sticky-close {
+    cursor: pointer;
+}
+
+.sticky-save-btn {
+    background-color: none;
+    border: none;
+    outline: none;
+    background: none;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.sticky-color-input {
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.sticky-note-card hr {
+    margin: 10px 0;
+}
+
+.sticky-note-action svg {
+    color: #ffffff;
+    transition: 0.3s all;
+}
+
+.sticky-note-action svg:hover {
+    color: #999999;
+}
+
+.sticky-note-textarea {
+    min-height: 150px !important;
+    min-width: 300px !important;
+    resize: both;
+    overflow: auto;
+    background-color: transparent;
+    border: none;
+    position: relative;
+}
+
+.sticky-note-textarea:focus {
+    background-color: transparent;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.sticky-note-textarea:disabled {
+    background-color: transparent;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.sticky-action-wrapper {
+    height: 35px;
+}
+
+@keyframes show {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes hide {
+    from {
+        height: 100%;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.sticky-note-card .sticky-note-action {
+    animation-name: hide;
+    animation-duration: 0.2s;
+    height: 0;
+}
+
+.sticky-note-card:hover .sticky-note-action {
+    animation-name: show;
+    animation-duration: 0.2s;
+    height: 100%;
+}
+
+.sticky-note-card:active .sticky-note-action {
+    animation-name: show;
+    animation-duration: 0.2s;
+    height: 100%;
+}
+
+.sticky-note-card:focus .sticky-note-action {
+    animation-name: show;
+    animation-duration: 0.2s;
+    height: 100%;
+}
+
+.sticky-note-action .action-div {
+    opacity: 0;
+    transition: all 0;
+}
+
+.sticky-note-card:hover .sticky-note-action .action-div {
+    opacity: 1;
+    transition: all 1000ms;
+}
+
+.sticky-note-card:active .sticky-note-action .action-div {
+    opacity: 1;
+    transition: all 1000ms;
+}
+
+.sticky-note-card:focus .sticky-note-action .action-div {
+    opacity: 1;
+    transition: all 1000ms;
+}
+
+.image-file-selector {
+    display: none;
+}
+
+.images-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.images-wrapper .image-item {
+    margin: 5px;
+    min-height: 150px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+
+.images-wrapper .image-item img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    border-radius: 5px;
+}
+
+.images-wrapper .image-item .image-remove-div {
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    right: 5px;
+    z-index: 99;
+    border: 1px solid #666666;
+    background: #666666;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    top: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.images-wrapper .image-item:hover .image-remove-div {
+    opacity: 1;
+}
+
+.pencil-button-select {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.pencil-button-select svg {
+    color: #333333;
+}
+.pencil-button {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.textarea-canvas {
+    position: relative;
+    overflow: hidden;
+}
+
+.sketch-canvas-area rect {
+    fill: transparent !important;
+}
+
+.img-upload-spinner {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+}
